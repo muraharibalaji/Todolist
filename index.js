@@ -1,6 +1,6 @@
 const app = require('./app');
 const mongoose = require("mongoose");
-const dburl="mongodb+srv://balajisri1245:SB120997@cluster0.cou5got.mongodb.net/?retryWrites=true&w=majority"
+const dburl="mongodb+srv://balajisri1245:SB120997@cluster0.cou5got.mongodb.net/user?retryWrites=true&w=majority"
 mongoose.connect(dburl)
 .then((result)=>{
     console.log("DB CONNECT")
