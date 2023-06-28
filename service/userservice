@@ -21,7 +21,7 @@ static async checkuser(email){
 }
 static async generatetoken(tokendata,secretkey){
     try{
-        return jwt.sign(tokendata,secretkey,{expiresin:'1D'});
+        return jwt.sign(tokendata,secretkey,{expiresIn:'1h'});
 
     }
     catch (err){

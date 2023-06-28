@@ -27,7 +27,7 @@ let tokenData ={
     id:user._id,
     email:user.email
 }
-const t = await userservice.generatetoken(tokendata,'secretkey');
+const t = await userservice.generatetoken(tokenData,'secretkey');
 res.status(200).json({
     status:true,
     token:t
