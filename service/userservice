@@ -2,12 +2,12 @@ const usermodel = require('../models/usermodel')
 class userservice{
     static async registeruser(email,password){
 try{
-    const createuser=await usermodel.create({email,password});
-    return createuser;
+    const createuser=await usermodel.create({email,password})
+    return createuser
 }
    catch(err){
-    console.log(err);
+    console.log(err)
 }
 }
 }
-module.exports=userservice;
+module.exports=userservice
