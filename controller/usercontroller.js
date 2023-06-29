@@ -1,5 +1,6 @@
 const userservice= require('../service/userservice');
 const bcrypt = require('bcrypt');
+
 const register = async(req,res)=>{
     try{
         const{email,password}=req.body;
@@ -10,7 +11,8 @@ const register = async(req,res)=>{
         console.log(err);
         }
     }
-    const login = async (req,res)=>{
+    
+const login = async (req,res)=>{
         try{
             const {email,password} = req.body;
             
@@ -28,17 +30,38 @@ if(!ismatch){
 let tokenData ={
     id:user._id,
     email:user.emaily
-}
+ }
 const t = await userservice.generatetoken(tokenData,'secretkey');
 res.status(200).json({
     status:true,
-    token:t
-})
-        }
+    token:t })
+
+
+}
         catch (err){
             console.log(err)
         }
-    }
 
-    module.exports={register,login}
+
+    }
+        const modellist = async(req,res)=>{
+            try{
+                const{id,title,desc}=req.body;
+                const user=await userservice.todolist(id,title,desc);
+                res.json(user);
+            }
+            catch(err){
+                console.log(err);
+                }
+            }
+
+
+
+    
+
+    module.exports={
+        register,
+        login,
+        modellist
+    }
 

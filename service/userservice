@@ -1,4 +1,5 @@
 const usermodel = require('../models/usermodel')
+const todomodellist = require('../models/todomodellist')
 const jwt = require('jsonwebtoken');
 class userservice{
     static async registeruser(email,password){
@@ -28,5 +29,18 @@ static async generatetoken(tokendata,secretkey){
         console.log(err);
     }
 }
+
+static async todolist(id,title,desc){
+try{
+        const createuser=await todomodellist.create({id,title,desc})
+        return createuser
+    }
+       catch(err){
+        console.log(err)
+    }
+    }
+
+
+ 
 }
 module.exports=userservice
