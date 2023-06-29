@@ -18,6 +18,7 @@ const register = async(req,res)=>{
 const user = await userservice.checkuser(email);
 if(!user){
      throw new Error('user not found');
+    res.send("User not found")
 }
 // checking the password
 const ismatch = await bcrypt.compare(password,user.password);
