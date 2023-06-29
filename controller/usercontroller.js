@@ -23,11 +23,11 @@ if(!user){
 // checking the password
 const ismatch = await bcrypt.compare(password,user.password);
 if(!ismatch){
-    throw new error('invalid password')
+    throw new Error("invalid password")
 }
 let tokenData ={
     id:user._id,
-    email:user.email
+    email:user.emaily
 }
 const t = await userservice.generatetoken(tokenData,'secretkey');
 res.status(200).json({
