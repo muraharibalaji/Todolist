@@ -13,7 +13,8 @@ const register = async(req,res)=>{
     const login = async (req,res)=>{
         try{
             const {email,password} = req.body;
-            //finding the user
+            
+//finding the user
 const user = await userservice.checkuser(email);
 if(!user){
     throw new error('user not found');
