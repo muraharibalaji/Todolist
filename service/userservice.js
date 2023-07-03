@@ -22,7 +22,7 @@ static async checkuser(email){
 }
 static async generatetoken(tokendata,secretkey){
     try{
-        return jwt.sign(tokendata,secretkey,{expiresIn:'1h'});
+        return jwt.sign(tokendata,secretkey,{expiresIn:'1w'});
 
     }
     catch (err){

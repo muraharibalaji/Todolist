@@ -1,16 +1,35 @@
-const todomodellist = require('../models/todomodellist')
-class userservice{
-    static async todolist(id,title,desc){
+const todomodel = require('../models/todomodel')
+
+class todoservice{
+    static async addtodo(user_id,title,desc){
         try{
-                const createuser=await todomodellist.create({id,title,desc})
-                return createuser
+            const createtodo=await todomodel.create({user_id,title,desc})
+            return createtodo;
             }
-               catch(err){
-                console.log(err)
+        catch(err){
+            console.log(err)
             }
-            }
-        
-        
-         
         }
-        module.exports=userservice
+    
+    static async gettodo(user_id){
+        try{
+            const getdata = await todomodel.find({user_id});
+            return getdata;
+        }
+        catch(err){
+            console.log(err);
+            }
+        }
+         
+    static async deletetodo(id) {
+        try {
+            const deleted = await todomodel.findOneAndDelete({ _id: id });
+            return deleted;
+            }
+        catch (err) {
+            console.log(err);
+            }
+        }
+}
+
+module.exports=todoservice;

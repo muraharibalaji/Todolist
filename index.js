@@ -9,6 +9,7 @@ mongoose.connect(dburl)
     console.log(err)
 })
 port=2232;
+
 app.get('/',(req,res)=>{
 res.send("HII WELCOME TO TODO APP")
 })
