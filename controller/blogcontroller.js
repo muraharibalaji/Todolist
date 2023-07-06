@@ -1,8 +1,9 @@
 const bs = require('../service/blogservice');
+const multer = require('multer');
 const fs = require('fs');
 var bodyparser = require('body-parser');
 
-const createpost = async (req,res)=>{
+const addpost = async (req,res)=>{
     try{
         const {userid,name,desc,image} = req.body;
         const user = await bs.createpost(userid,name,desc,image);
@@ -24,4 +25,4 @@ const uploads = async (req,res,next)=>{
 }
 
 
-module.exports = {createpost,uploads};
+module.exports = {addpost,uploads};
