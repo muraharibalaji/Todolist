@@ -1,13 +1,13 @@
 
 const mongoose = require("mongoose");
 const s = mongoose.Schema
-const bs = new s
+const is = new s
 ({
 image:{
-    data:'Buffer',
-    contentType:'string'
+    data:Buffer,
+    contentType:String
 } 
 
 })
-const imgmodel = mongoose.model("img",bs);
+const imgmodel = mongoose.model("img",is);
 module.exports = imgmodel;
