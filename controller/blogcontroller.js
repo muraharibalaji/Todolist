@@ -1,7 +1,7 @@
 const bs = require('../service/blogservice');
 const multer = require('multer');
-const fs = require('fs');
-var bodyparser = require('body-parser');
+const app = require('express');
+
 
 const addpost = async (req,res)=>{
     try{
@@ -16,13 +16,8 @@ const addpost = async (req,res)=>{
 
 }
 
-
-const uploads = async (req,res,next)=>{
-    var readfile = Buffer.from(req.body.image,"base64");
-    fs.writeFileSync(req.body.name.realFile,"utf8")
-    console.log("image uploads");
-    await res.send({message:"upload image in flutter"});
-}
+// Define the route for image uploads
 
 
-module.exports = {addpost,uploads};
+
+module.exports = {addpost};

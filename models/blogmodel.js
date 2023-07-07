@@ -21,8 +21,8 @@ const bs = new s
     required:"true"
 } ,
 image:{
-    type:'string',
-    required:'true'
+    data:'Buffer',
+    contentType:'string'
 } 
 
 })

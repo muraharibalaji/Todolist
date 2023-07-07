@@ -12,15 +12,6 @@ static async createpost (userid,name,desc,image){
     }
 }
 
-static async uploads (image){
-    try{
-        const cp = await blogmodel.uploads ({image});
-        return cp;
-    }
-    catch (err){
-        console.log(err);
-    }
-}
 
 
 }
